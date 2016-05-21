@@ -7,7 +7,7 @@
 
 
     <link type="text/css" rel="stylesheet" href="https://blog.st-hatena.com/css/touch/theme/normal/normal.css?version=7e41092877ff7d699bc61c9ffe4e4d52">
-
+    <link rel="stylesheet" href="../mobile-custom-design.css" />
       <style class="touch-accent-color">
     #globalheader-container {
       background: white;
@@ -23,6 +23,7 @@
 
 
     <title>青空コメントアウト</title>
+    <link rel="stylesheet" href="https://rawgit.com/aloerina01/follow-buttons/master/icomoon/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.rawgit.com/aloerina01/Theme-TripInTheSky/master/icomoon/style.css">
 <script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.ja.SqQ6oDL1qGM.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCMev4l7TJunmvftE5ITptEaUstIsA/cb=gapi.loaded_0" async=""></script><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -94,13 +95,95 @@
           <a href="http://aloecity.hatenablog.com/" class="blog-title">青空コメントアウト</a>
         </h1>
 
-          <h2 id="blog-description">よく晴れた空のような、清々しくて白々しいコメントアウト。ご飯の話、音楽や本や写真の話、開発の話、ときどき落書きも。</h2>
+          <h2 id="blog-description">WEBのこと、デザインのこと、ご飯のこと、趣味のこと。青空の向こうの誰かに届きますように。</h2>
 
       </header>
 
 
-
-
+      <div id="top-editarea">
+        <div class="custom-header">
+          <div class="custom-header-inner">
+            <div class="left-side">
+              <a href="/">青空コメントアウト</a>
+            </div>
+            <div class="right-side">
+              <div class="icon icon-like display-none">
+                <i class="fa fa-heart"></i>
+              </div>
+              <div class="icon icon-menu">
+                <i class="fa fa-bars"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-menu">
+          <div class="close-button">
+            <i class="fa fa-close"></i>
+          </div>
+          <div class="close-area"></div>
+          <div class="slide-menu-inner">
+            <ul class="categories">
+              <li class="category category-top" onClick="top();">
+                <i class="icon fa fa-home"></i>
+                <span class="label">Top</span>
+              </li>
+              <li class="category cetegory-about" onClick="about();">
+                <i class="icon fa fa-star"></i>
+                <span class="label">About</span>
+              </li>
+              <li class="horizon"></li>
+              <li class="category category-development" onClick="tag('%2F%2F%20WEB開発の話')";>
+                <i class="icon fa fa-desktop"></i>
+                <span class="label">WEB開発の話</span>
+              </li>
+              <li class="category category-food" onClick="tag('%2F%2F%20ごはんとおかずの話');">
+                <i class="icon fa fa-cutlery"></i>
+                <span class="label">ごはんとおかずの話</span>
+              </li>
+              <li class="category category-ism" onClick="tag('%2F%2F%20あろえいずむの話');">
+                <i class="icon fa fa-leaf"></i>
+                <span class="label">あろえいずむの話</span>
+              </li>
+              <li class="category category-nonlabel" onClick="tag('%2F%2F%20ためにならない話');">
+                <i class="icon fa fa-quote-right"></i>
+                <span class="label">ためにならない話</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script>
+      $(function() {
+        $(window).on('scroll', function() {
+          if ($(this).scrollTop() > 300) {
+            $('.custom-header').addClass('show');
+            $('.header-image').addClass('hide');
+          } else {
+            $('.custom-header').removeClass('show');
+            $('.header-image').removeClass('hide');
+          }
+        })
+        $('.icon-menu').on('click', function() {
+          $('.slide-menu').toggleClass('show');
+        });
+        $('.close-button').on('click', function() {
+          $('.slide-menu').removeClass('show');
+        });
+        $('.close-area').on('click', function() {
+          $('.slide-menu').removeClass('show');
+        });
+      });
+      function top() {
+        window.location.href = '/';
+      };
+      function about() {
+        window.location.href = '/about';
+      };
+      function tag(tagName) {
+        window.location.href = '/archive/category/' + tagName;
+      };
+      </script>
 
 
 
@@ -362,10 +445,6 @@
 
 
 
-
-
-
-
         <div class="hatena-module profile touch-default-hatena-module">
   <div class="hatena-module-title">
     プロフィール
@@ -542,7 +621,31 @@
 </ul>
 
 
-
+<div id="bottom-editarea">
+    <div class="section">
+      <div id="custom-footer" class="custom-footer">
+        <div class="custom-footer-inner">
+          <div class="main-label">
+            青空コメントアウト
+          </div>
+          <div class="sub-label">
+            Designed by Aloerina.
+          </div>
+          <div class="follow-buttons">
+            <div class="mobile-follow-button mobile-follow-button-blog">
+              <i class="blogicon-hatenablog"></i>
+            </div>
+            <div class="mobile-follow-button mobile-follow-button-twitter">
+              <i class="fa fa-twitter"></i>
+            </div>
+            <div class="mobile-follow-button mobile-follow-button-feedly">
+              <i class="icon icon-al-feedly"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <footer id="footer">
   <div class="pagetop section">
